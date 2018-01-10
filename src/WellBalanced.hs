@@ -28,7 +28,3 @@ wellBalanced' (x:xs) s  | x == '('  = wellBalanced' xs (S.push x s)
                         | x == '}' && S.top s == '{' = wellBalanced' xs (S.pop s)
                         | x == ']' && S.top s == '[' = wellBalanced' xs (S.pop s)
                         | otherwise = wellBalanced' xs s
-
-kek :: String -> Int
-kek cad = if not (wellBalanced cad) then error "Syntax error: not a balanced operation"
-    else True
