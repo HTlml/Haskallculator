@@ -7,7 +7,7 @@ module Expression(
     sample1
 ) where
 
-data Item = Add | Dif | Mul | Value Integer | LeftP | RightP deriving Show
+data Item = Add | Dif | Mul | Value Integer | LeftP | RightP deriving (Show, Eq)
 
 type Expression = [Item]
 
@@ -24,5 +24,3 @@ isValue _         = False
 sample1 :: Expression
 sample1 = [ Value 5, Add, LeftP, Value 6, Dif,
             Value 2, RightP, Mul, Value 3]
-
-    
